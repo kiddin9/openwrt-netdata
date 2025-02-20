@@ -1,5 +1,5 @@
---- a/web/index.html
-+++ b/web/index.html
+--- a/web/gui/index.html
++++ b/web/gui/index.html
 @@ -1902,7 +1902,6 @@
        })
    }
