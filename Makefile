@@ -128,6 +128,8 @@ define Package/netdata/install
 	$(INSTALL_DIR) $(1)/etc/nginx/conf.d
 	$(INSTALL_DATA) ./files/netdata.locations $(1)/etc/nginx/conf.d/netdata.locations
 	$(INSTALL_DATA) ./files/netdata.htpasswd  $(1)/etc/nginx/conf.d/netdata.htpasswd
+	$(INSTALL_DIR) $(1)/etc/uci-defaults
+	$(INSTALL_DATA) ./files/netdata.uci-defaults $(1)/etc/uci-defaults/luci-netdata
 endef
 
 $(eval $(call BuildPackage,netdata))
