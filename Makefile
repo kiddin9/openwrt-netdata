@@ -126,11 +126,9 @@ define Package/netdata/install
 	#netdata webdir and remove uneeded files
 	$(INSTALL_DIR) $(1)/usr/share/netdata
 	$(CP) $(PKG_INSTALL_DIR)/usr/share/netdata $(1)/usr/share
+	$(CP) $(1)/usr/share/netdata/web/v3/* $(1)/usr/share/netdata/web/
+	rm -r $(1)/usr/share/netdata/web/v3/*
 	rm $(1)/usr/share/netdata/build-info-cmake-cache.gz
-	rm $(1)/usr/share/netdata/web/v3/3D_PARTY_LICENSES.txt
-	rm $(1)/usr/share/netdata/web/v3/LICENSE.md
-	rm $(1)/usr/share/netdata/web/v3/*.LICENSE.txt
-	rm -r $(1)/usr/share/netdata/web/static/*
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/netdata.init $(1)/etc/init.d/netdata
 	$(INSTALL_DIR) $(1)/etc/config
