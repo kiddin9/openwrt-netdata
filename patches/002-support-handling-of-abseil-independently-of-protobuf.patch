@@ -143,10 +143,10 @@ diff -Naur a/packaging/cmake/Modules/NetdataAbseil.cmake b/packaging/cmake/Modul
 +endfunction()
 \ No newline at end of file
 diff --git a/packaging/cmake/Modules/NetdataProtobuf.cmake b/packaging/cmake/Modules/NetdataProtobuf.cmake
-index 5375d13970aa3a..42bf42446be025 100644
+index 5375d13970aa3a..d7c32593aa7652 100644
 --- a/packaging/cmake/Modules/NetdataProtobuf.cmake
 +++ b/packaging/cmake/Modules/NetdataProtobuf.cmake
-@@ -24,39 +24,12 @@ function(netdata_bundle_protobuf)
+@@ -24,39 +24,11 @@ function(netdata_bundle_protobuf)
          set(FETCHCONTENT_FULLY_DISCONNECTED Off)
  
          if(NEED_ABSL)
@@ -185,7 +185,6 @@ index 5375d13970aa3a..42bf42446be025 100644
                  endif()
 -                FetchContent_MakeAvailable_NoInstall(absl)
 -                message(STATUS "Finished preparing bundled Abseil")
-+
 +                netdata_bundle_abseil()
 +                set(BUNDLED_ABSEIL PARENT_SCOPE)
          endif()
